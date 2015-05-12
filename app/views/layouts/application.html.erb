@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
+  <head>
+    <title>TrekHunt</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <div class='logo'>Trek.Hunt</div>
+          <% if current_user %>
+          <a href='/users/sign_out'>Sign Out</a>
+          <% else %>
+          <a href='/users/sign_in'>Sign In</a>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+
+  <%= yield %>
+
+
+    <footer>
+    </footer>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  </body>
+</html>
