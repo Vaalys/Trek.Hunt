@@ -1,5 +1,4 @@
 var activitySearch = document.querySelector("#search")
-
 var activitySelect = document.querySelector("#activity-select")
 var citySearch = document.querySelector("#city-search")
 var searchDiv = document.querySelector(".search-box")
@@ -12,22 +11,28 @@ var searchLoad = function(search, response){
   resultsDiv = document.createElement('div');
   resultsDiv.setAttribute('class', 'results-div')
   $('.main-div').after(resultsDiv);
+
   for(var i = 0; i < response.length; i++){
-
-    this.response = response[i]
-
     result = document.createElement('p');
     $('.results-div').append(result)
     result.innerHTML = (response[i].name)
 
-    result.addEventListener('click', function(event){
+    if (result) result.addEventListener('click', function(event){
       event.preventDefault();
-      activityDetail(this.response);
+        for (var i = 0; i < response.length; i ++){
+          if (this.innerHTML === response[i].name){
+            activityDetail(response[i]);
+            // thumbnail = document.createElement('img');
+            // thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
+            // $('p').append(thumbnail)
+          }
+        }
     })
-
-    // thumbnail = document.createElement('img');
-    // thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
-    // $('p').append(thumbnail)
+    // if (this.innerHTML === response[i].name){
+    //   thumbnail = document.createElement('img');
+    //   thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
+    //   $('p').append(thumbnail)
+    // };
 
   }
 };
@@ -37,6 +42,7 @@ var activityDetail = function(activity){
 };
 
 if (activitySearch) activitySearch.addEventListener('submit', function(event){
+
   event.preventDefault();
   var search = citySearch.value;
   var activity = activitySelect.value;
