@@ -3,6 +3,9 @@
   <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
   <head>
     <title>TrekHunt</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
   <body>
     <header>
@@ -14,7 +17,6 @@
             <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
           <% else %>
             <%= link_to "Sign In", new_user_session_path, :method => :new %>
-            <!-- <a href='/users/sign_in'>Sign In</a> -->
           <% end %>
           <% if current_user %>
             <%= link_to "My Treks", '/users/current_user', :method => :get %>
@@ -29,9 +31,8 @@
 
     <footer>
     </footer>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
+
+
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   </body>
 </html>

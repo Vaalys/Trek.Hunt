@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :welcome
   resources :activities
   resources :locations
-  resources :users
 
   get '/search', to: 'welcome#search'
 

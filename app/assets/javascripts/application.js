@@ -17,6 +17,10 @@ var searchLoad = function(search, response){
     $('.results-div').append(result)
     result.innerHTML = (response[i].name)
 
+    thumbnail = document.createElement('img');
+    thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
+    $('p').append(thumbnail)
+
     if (result) result.addEventListener('click', function(event){
       event.preventDefault();
         for (var i = 0; i < response.length; i ++){
@@ -28,11 +32,6 @@ var searchLoad = function(search, response){
           }
         }
     })
-    // if (this.innerHTML === response[i].name){
-    //   thumbnail = document.createElement('img');
-    //   thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
-    //   $('p').append(thumbnail)
-    // };
 
   }
 };
