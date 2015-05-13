@@ -1,16 +1,18 @@
 body {
   text-align: center;
-  background: lightgray;
-  font-family: 'Rancho', cursive;
+  background: #E9E5DD;
   padding: 0;
   margin: 0 auto;
-  font-size: 30px;
+  font-family: 'Open Sans',Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: 10px;
+  font-size: 20px;
+  color: white;
 }
 
 header {
   background-image: url("http://www.zicasso.com/sites/default/files/styles/original_scaled_down/public/headerimages/tour/Costa-Rica-Monteverde-Cloudforest-Bridge-and-Hiker-LT-Header.jpg");
+  font-family: 'Rancho', cursive;
   background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
   background-position: center;
   background-size: 100%;
 }
@@ -18,20 +20,14 @@ header {
 header, nav, ul {
   padding: 0px;
   margin: 0 auto;
-  border-bottom: 1px solid #eee;
   height: 140px;
-  color: white;
 }
 
-.logo {
-  font-size: 120px;
-  display: inline-block;
-  /*text-align: left;*/
-  padding: 0px;
-  margin: 0 auto;
+.logo, ul > div > a {
+  color: white;
+  font-size: 110px;
   float: left;
   margin: 0 0 0 20px;
-
 }
 
 ul > a {
@@ -41,13 +37,14 @@ ul > a {
   margin: 10px 20px 0 0;
 }
 
-.search_box {
-  margin: 50px;
+.search-box {
+  width: 200px;
+  margin: 150px 80px 80px 200px;
+  float: left;
+  clear: both;
 }
 
 #search, #city-search  {
-  display: inline-block;
-  color: white;
 }
 
 #search > input, #activity-select {
@@ -58,9 +55,8 @@ ul > a {
 #user_email, #user_password, #search, #activity-select, #city-search, #search > input {
   width: 200px;
   height: 30px;
-  font-family: 'Rancho';
-  font-size: 22px;
-  display: inline;
+  font-family: 'Open Sans',Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -69,9 +65,31 @@ ul > a {
 }
 
 form {
+}
+
+.main-div > img {
+  margin: 20px 210px 20px 20px;
+  float: right;
+}
+
+.main-div {
+  background: #E9E5DD;
+  height: 455px;
+}
+
+.results-div {
+  background: #95BDF8;
+  padding: 20px;
+}
+
+.results-div > p > img {
+  height: 30px;
+  width: 30px;
   display: inline-block;
 }
 
-img {
-  margin: 10px;
+p {
+  /*background: #6E7CEC;*/
+  margin: 20px;
+  text-align: left;
 }

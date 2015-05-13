@@ -1,15 +1,42 @@
-var activitySearch = document.querySelector("form")
+var activitySearch = document.querySelector("#search")
+
 var activitySelect = document.querySelector("#activity-select")
 var citySearch = document.querySelector("#city-search")
+var searchDiv = document.querySelector(".search-box")
+var mainDiv = document.querySelector(".main-div")
 
-// var searchLoad = function(search){
-//   map = document.createElement('img')
-//   map.setAttribute('src', "https://maps.googleapis.com/maps/api/staticmap?center=" + search + "&zoom=12&size=800x400");
-//   activitySearch.insertAfter(map)
-// };
+var searchLoad = function(search, response){
+  map = document.createElement('img');
+  map.setAttribute('src', "https://maps.googleapis.com/maps/api/staticmap?center=" + search + "&zoom=12&size=1000x400");
+  $(".main-div").append(map);
+  resultsDiv = document.createElement('div');
+  resultsDiv.setAttribute('class', 'results-div')
+  $('.main-div').after(resultsDiv);
+  for(var i = 0; i < response.length; i++){
 
-activitySearch.addEventListener('submit', function(event){
-  // map.removeChild
+    this.response = response[i]
+
+    result = document.createElement('p');
+    $('.results-div').append(result)
+    result.innerHTML = (response[i].name)
+
+    result.addEventListener('click', function(event){
+      event.preventDefault();
+      activityDetail(this.response);
+    })
+
+    // thumbnail = document.createElement('img');
+    // thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
+    // $('p').append(thumbnail)
+
+  }
+};
+
+var activityDetail = function(activity){
+  console.log(activity);
+};
+
+if (activitySearch) activitySearch.addEventListener('submit', function(event){
   event.preventDefault();
   var search = citySearch.value;
   var activity = activitySelect.value;
@@ -22,7 +49,7 @@ activitySearch.addEventListener('submit', function(event){
         },
   }).done(function(response){
     console.log(response.places);
-    searchLoad(search);
+    searchLoad(search, response.places);
   }).fail(function(){
     console.log("AJAX failed!")
   })
