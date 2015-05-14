@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
+
   <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+
   <head>
     <title>TrekHunt</title>
   </head>
@@ -23,6 +27,9 @@
       </nav>
     </header>
 
+    <div id="map"></div>
+
+
   <%= yield %>
 
 
@@ -33,6 +40,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    
   </body>
 </html>

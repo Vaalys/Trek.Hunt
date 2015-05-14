@@ -96,17 +96,38 @@ form {
 .results-div {
   background: #95BDF8;
   padding: 20px;
+  height: 100%;
+  clear: both;
 }
 
 .results-div > p > img {
-  height: 30px;
-  width: 30px;
-  display: inline-block;
+  height: 170px;
+  width: 170px;
+  float: left;
+  clear: both;
+  margin: 0 10px 0 0;
+}
+
+.results-div > p > a {
+  display: block;
+  font-size: 25px;
 }
 
 p {
-s  margin: 20px;
+  margin: 30px 70px 30px 120px;
   text-align: left;
+  height: 160px;
+  font-size: 20px;
+}
+
+p > p {
+  font-size: 15px;
+  margin: 8px 40px 5px 5px;
+  max-height: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+
 }
 
 footer {
@@ -123,5 +144,8 @@ footer > a {
   color: white;
   float: left;
   margin: 10px 20px 10px 20px;
+}
 
+#map {
+  height: 180px;
 }

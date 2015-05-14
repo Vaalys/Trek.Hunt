@@ -31,30 +31,38 @@ var searchLoad = function(search, response){
 
   for(var i = 0; i < response.length; i++){
     result = document.createElement('p');
+    result.setAttribute('id', [i])
     $('.results-div').append(result)
-    result.innerHTML = (response[i].name)
+    result.innerHTML = (response[i].city + ', '+ response[i].state + ', '+ response[i].country)
+    actDescription = document.createElement('p');
+    actDescription.innerHTML = response[i].activities[0].description
+    $('#' + [i]).append(actDescription)
 
-    // prepend innerHTML of $('p')
-    // $('p').appendChild(NodeChild[0])
-    // thumbnail = document.createElement('img');
-    // thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
-    // $('p').append(thumbnail)
 
-    if (result) result.addEventListener('click', function(event){
+    linkName = document.createElement('a')
+    linkName.innerText = (response[i].name)
+    linkName.setAttribute('href', '');
+    $('#' + [i]).prepend(linkName)
+
+    if (result) linkName.addEventListener('click', function(event){
       event.preventDefault();
         for (var i = 0; i < response.length; i ++){
           if (this.innerHTML === response[i].name){
             activityDetail(response[i]);
-
           }
         }
     })
+
+    thumbnail = document.createElement('img');
+    thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
+    $('#' + [i]).prepend(thumbnail)
 
   }
 };
 
 var activityDetail = function(activity){
   console.log(activity);
+
 };
 
 if (activitySearch) activitySearch.addEventListener('submit', function(event){
@@ -77,3 +85,13 @@ if (activitySearch) activitySearch.addEventListener('submit', function(event){
   })
 
 })
+
+
+var map = L.map('map').setView([51.505, -0.09], 13);
+
+L.tileLayer('https://a.tiles.mapbox.com/v4/vaalys.f773ae70/page.html?access_token=pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA#4/38.00/-97.00', {
+    attribution: "Map data &copy; <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/vaalys.f773ae70/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA'></iframe>",
+    maxZoom: 18,
+    id: 'vaalys.f773ae70',
+    accessToken: 'pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA'
+}).addTo(map);
