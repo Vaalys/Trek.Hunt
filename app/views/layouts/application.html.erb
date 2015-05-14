@@ -3,9 +3,6 @@
   <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
   <head>
     <title>TrekHunt</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
   </head>
   <body>
     <header>
@@ -30,9 +27,12 @@
 
 
     <footer>
+      <a href='https://github.com/Vaalys'>@GitHub</a>
     </footer>
 
-
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   </body>
 </html>

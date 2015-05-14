@@ -1,3 +1,19 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
 body {
   text-align: center;
   background: #E9E5DD;
@@ -39,7 +55,7 @@ ul > a {
 
 .search-box {
   width: 200px;
-  margin: 150px 80px 80px 200px;
+  margin: 120px 80px 80px 170px;
   float: left;
   clear: both;
 }
@@ -89,14 +105,23 @@ form {
 }
 
 p {
-  /*background: #6E7CEC;*/
-  margin: 20px;
+s  margin: 20px;
   text-align: left;
 }
 
-.uk-button {
-  line-height: 28px;
-  min-height: 30px;
-  font-size: 1rem;
-  padding: 12px;
+footer {
+  height: 80px;
+  background-image: url("http://www.zicasso.com/sites/default/files/styles/original_scaled_down/public/headerimages/tour/Costa-Rica-Monteverde-Cloudforest-Bridge-and-Hiker-LT-Header.jpg");
+  font-family: 'Rancho', cursive;
+  background-position: bottom;
+  background-size: 100%;
+  margin-top: 110px;
+}
+
+footer > a {
+  font-size: 25px;
+  color: white;
+  float: left;
+  margin: 10px 20px 10px 20px;
+
 }
