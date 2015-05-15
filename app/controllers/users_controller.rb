@@ -12,7 +12,6 @@ class UsersController < ApplicationController
       format.html { render :index }
       format.json { render :json => @cards }
     end
-
   end
 
   def location

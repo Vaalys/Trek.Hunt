@@ -2,6 +2,8 @@
 
   <div class='search-box'>
 
+    <p>Search an activity in an area you'd like to plan your trip! Plan your trip by location and activity! Here is the description of my site, that I should make catchy and meaningful for the user!</p>
+
     <select id='activity-select'>
       <option value='Mountain Biking'>Mountain Biking</option>
       <option value='Campgrounds'>Campgrounds</option>
@@ -16,6 +18,12 @@
       <input type='search' placeholder='Search a City' id='city-search'>
       <input type='submit' value='Search'>
     </form>
+
+    <!-- hide this until ^ search form submit -->
+    <%= form_tag '/', method: :post do %>
+      <%= hidden_field_tag(:search, params[:search]) %>
+      <%= submit_tag '<3', data: { confirm: "Saved to My Treks!"}, :class => "favorite" %>
+    <% end %>
 
   </div>
 </div>

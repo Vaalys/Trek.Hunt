@@ -29,8 +29,11 @@ header {
   background-image: url("http://www.zicasso.com/sites/default/files/styles/original_scaled_down/public/headerimages/tour/Costa-Rica-Monteverde-Cloudforest-Bridge-and-Hiker-LT-Header.jpg");
   font-family: 'Rancho', cursive;
   background-repeat: no-repeat;
-  background-position: center;
+  /*background-position: center top bottom;*/
   background-size: 100%;
+  /*background-position: 50px 50px;*/
+  background-position: 50% 35%;
+
 }
 
 header, nav, ul {
@@ -54,10 +57,17 @@ ul > a {
 }
 
 .search-box {
-  width: 200px;
-  margin: 120px 80px 80px 170px;
+  width: 400px;
+  margin: 40px;
+  padding: 0 0 0 50px;
   float: left;
   clear: both;
+  color: #333036;
+  font-weight: 200;
+}
+
+form {
+  margin: 0 auto;
 }
 
 #search, #city-search  {
@@ -73,6 +83,7 @@ ul > a {
   height: 30px;
   font-family: 'Open Sans',Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-size: 18px;
+  font-weight: 200;
   text-align: center;
 }
 
@@ -80,17 +91,33 @@ ul > a {
   width: 70px;
 }
 
-form {
+#search {
+  height: 20px;
+  text-align: center;
+
+}
+
+.favorite {
+  display: inline-block;
+  margin: 41px;
+  width: 33px;
+  font-size: 18px;
+  text-align: center;
+  background: black;
+  color: white;
+
 }
 
 .main-div > img {
-  margin: 20px 210px 20px 20px;
+  margin: 0 130px 0 0;
   float: right;
+  width: 700px;
+  height: 400px;
 }
 
 .main-div {
   background: #E9E5DD;
-  height: 455px;
+  height: 400px;
 }
 
 .results-div {
@@ -113,7 +140,7 @@ form {
   font-size: 25px;
 }
 
-p {
+.results-div > p {
   margin: 30px 70px 30px 120px;
   text-align: left;
   height: 160px;
@@ -136,16 +163,20 @@ footer {
   font-family: 'Rancho', cursive;
   background-position: bottom;
   background-size: 100%;
-  margin-top: 110px;
+  padding: 1rem;
+  text-align: left;
+}
+
+footer > p {
+  float: left;
+  display: block;
+  margin: 1px;
+  padding: 0;
 }
 
 footer > a {
   font-size: 25px;
   color: white;
-  float: left;
-  margin: 10px 20px 10px 20px;
-}
-
-#map {
-  height: 180px;
+  float: right;
+  clear: both;
 }

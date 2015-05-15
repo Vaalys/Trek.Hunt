@@ -20,49 +20,70 @@ var activitySelect = document.querySelector("#activity-select")
 var citySearch = document.querySelector("#city-search")
 var searchDiv = document.querySelector(".search-box")
 var mainDiv = document.querySelector(".main-div")
+var favorite = document.querySelector(".favorite")
+
+$(".favorite").hide()
 
 var searchLoad = function(search, response){
   map = document.createElement('img');
-  map.setAttribute('src', "https://maps.googleapis.com/maps/api/staticmap?center=" + search + "&zoom=12&size=1000x400");
+  map.setAttribute('src', "https://maps.googleapis.com/maps/api/staticmap?center=" + search + "&zoom=12&size=700x400");
   $(".main-div").append(map);
   resultsDiv = document.createElement('div');
   resultsDiv.setAttribute('class', 'results-div')
   $('.main-div').after(resultsDiv);
+  $(".favorite").show()
 
   for(var i = 0; i < response.length; i++){
     result = document.createElement('p');
     result.setAttribute('id', [i])
     $('.results-div').append(result)
-    result.innerHTML = (response[i].city + ', '+ response[i].state + ', '+ response[i].country)
-    actDescription = document.createElement('p');
-    actDescription.innerHTML = response[i].activities[0].description
-    $('#' + [i]).append(actDescription)
+    result.innerHTML = (response[i].city)
+    if (response[i].state){
+      result.innerHTML = (result.innerHTML + ', '+ response[i].state)
+    }
+    if (response[i].country){
+      result.innerHTML = (result.innerHTML + ', '+ response[i].country)
+    }
+
+        linkName = document.createElement('a')
+        linkName.innerText = (response[i].name)
+        $('#' + [i]).prepend(linkName)
+    if (response[i].activities[0]){
+      if (response[i].activities[0].url){
+        linkName.setAttribute('href', response[i].activities[0].url);
+      }
+    }
+
+      thumbnail = document.createElement('img');
+      $('#' + [i]).prepend(thumbnail)
+    if (response[i].activities[0]) {
+      thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
+    }
+    else thumbnail.setAttribute('src', "http://www.fredericpierre.fr/wp-content/uploads/2012/06/Nature-1.jpg")
 
 
-    linkName = document.createElement('a')
-    linkName.innerText = (response[i].name)
-    linkName.setAttribute('href', '');
-    $('#' + [i]).prepend(linkName)
+      actDescription = document.createElement('p');
+      $('#' + [i]).append(actDescription)
+    if (response[i].activities[0]) {
+      if (response[i].activities[0].description) {
+      actDescription.innerHTML = response[i].activities[0].description
+      }
+    }
+    else actDescription.innerHTML = "Directions: " + response[i].directions
 
-    if (result) linkName.addEventListener('click', function(event){
-      event.preventDefault();
-        for (var i = 0; i < response.length; i ++){
-          if (this.innerHTML === response[i].name){
-            activityDetail(response[i]);
-          }
-        }
-    })
-
-    thumbnail = document.createElement('img');
-    thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
-    $('#' + [i]).prepend(thumbnail)
-
+    // if (result) linkName.addEventListener('click', function(event){
+    //   event.preventDefault();
+    //     for (var i = 0; i < response.length; i ++){
+    //       if (this.innerHTML === response[i].name){
+    //         activityDetail(response[i]);
+    //       }
+    //     }
+    // })
   }
 };
 
 var activityDetail = function(activity){
   console.log(activity);
-
 };
 
 if (activitySearch) activitySearch.addEventListener('submit', function(event){
@@ -87,11 +108,11 @@ if (activitySearch) activitySearch.addEventListener('submit', function(event){
 })
 
 
-var map = L.map('map').setView([51.505, -0.09], 13);
-
-L.tileLayer('https://a.tiles.mapbox.com/v4/vaalys.f773ae70/page.html?access_token=pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA#4/38.00/-97.00', {
-    attribution: "Map data &copy; <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/vaalys.f773ae70/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA'></iframe>",
-    maxZoom: 18,
-    id: 'vaalys.f773ae70',
-    accessToken: 'pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA'
-}).addTo(map);
+// var map = L.map('map').setView([39.49111, -105.09374], 13);
+//
+// L.tileLayer('https://a.tiles.mapbox.com/v4/vaalys.f773ae70/page.html?access_token=pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA#4/38.00/-97.00', {
+//     attribution: "Map data &copy; <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/vaalys.f773ae70/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA'></iframe>",
+//     maxZoom: 18,
+//     id: 'vaalys.f773ae70',
+//     accessToken: 'pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA'
+// }).addTo(map);

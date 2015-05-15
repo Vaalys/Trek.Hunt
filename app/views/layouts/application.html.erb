@@ -2,8 +2,12 @@
 <html>
 
   <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
+
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
 
   <head>
     <title>TrekHunt</title>
@@ -27,22 +31,26 @@
       </nav>
     </header>
 
-    <div id="map"></div>
+    <!-- <div id="map"></div> -->
 
 
   <%= yield %>
 
 
     <footer>
+      <p>©2015</p>
+      <p>Ammie Mcculloch, </p>
+      <p>Trail.API</p>
       <a href='https://github.com/Vaalys'>@GitHub</a>
+      <a href="mailto:vaalys9@gmail.com">Vaalys9@gmail.com</a>
     </footer>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+
+
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    
+
   </body>
 </html>
