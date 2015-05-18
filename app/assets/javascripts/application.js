@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
+// will pagenate
+
+
 var activitySearch = document.querySelector("#search")
 var activitySelect = document.querySelector("#activity-select")
 var citySearch = document.querySelector("#city-search")
@@ -25,6 +28,10 @@ var favorite = document.querySelector(".favorite")
 $(".favorite").hide()
 
 var searchLoad = function(search, response){
+  $(".results-div").empty();
+  searchDiv.style.float = 'left';
+  searchDiv.style.margin = '0 0 0 40px';
+
   map = document.createElement('img');
   map.setAttribute('src', "https://maps.googleapis.com/maps/api/staticmap?center=" + search + "&zoom=12&size=700x400");
   $(".main-div").append(map);
@@ -71,6 +78,7 @@ var searchLoad = function(search, response){
     }
     else actDescription.innerHTML = "Directions: " + response[i].directions
 
+    //        clicking on the object to give you the ajax info, figure out how to save this YO
     // if (result) linkName.addEventListener('click', function(event){
     //   event.preventDefault();
     //     for (var i = 0; i < response.length; i ++){
@@ -107,7 +115,7 @@ if (activitySearch) activitySearch.addEventListener('submit', function(event){
 
 })
 
-
+//      first attempt at using Leaflet, with mapbox
 // var map = L.map('map').setView([39.49111, -105.09374], 13);
 //
 // L.tileLayer('https://a.tiles.mapbox.com/v4/vaalys.f773ae70/page.html?access_token=pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA#4/38.00/-97.00', {

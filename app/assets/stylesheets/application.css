@@ -58,12 +58,18 @@ ul > a {
 
 .search-box {
   width: 400px;
-  margin: 40px;
-  padding: 0 0 0 50px;
-  float: left;
-  clear: both;
+  margin: 5px;
   color: #333036;
   font-weight: 200;
+  display: inline-block;
+  clear: both;
+}
+
+.search-box > h1 {
+  font-family: 'Rancho', cursive;
+  font-size: 55px;
+  /*margin: 2px 0 2px 0 ;*/
+  margin: 0;
 }
 
 form {
@@ -109,10 +115,11 @@ form {
 }
 
 .main-div > img {
-  margin: 0 130px 0 0;
-  float: right;
+  margin: 20px 0 5px 0;
   width: 700px;
   height: 400px;
+  display: inline-block;
+  text-align: center;
 }
 
 .main-div {

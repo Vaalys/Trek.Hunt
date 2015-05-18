@@ -1,28 +1,29 @@
-== README
+Welcome to Trek.Hunt!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To use this app, visit http://trek.herokuapp.com/
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+User Stories: https://trello.com/b/DEkHlwdL/trek-hunt
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To get this app up and running on your localhost, follow these instructions:
+
+
+On Github:
+
+  - Fork this repo and clone to your local repo
+
+In the terminal:
+
+  - bundle install
+
+  - rake db:create
+
+  - rake db:migrate
+
+  - rake db:seed
+
+  - rails s (to run server)
+
+In your browser:
+
+  - go to localhost:3000
