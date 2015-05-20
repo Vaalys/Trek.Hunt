@@ -17,6 +17,8 @@
 
 // will pagenate
 
+// theres alot of stuff going on here with this application.js file. I would recommend even if you don't utilize an object oriented approach, i would recommend abstracting some of your code into smaller chunks. There's lots of refactoring opportunities
+
 
 var activitySearch = document.querySelector("#search")
 var activitySelect = document.querySelector("#activity-select")
@@ -24,6 +26,8 @@ var citySearch = document.querySelector("#city-search")
 var searchDiv = document.querySelector(".search-box")
 var mainDiv = document.querySelector(".main-div")
 var favorite = document.querySelector(".favorite")
+
+// i don't see anything with class favorite in your views, maybe this isn't neccessary?
 
 $(".favorite").hide()
 
@@ -35,6 +39,7 @@ var searchLoad = function(search, response){
   map = document.createElement('img');
   map.setAttribute('src', "https://maps.googleapis.com/maps/api/staticmap?center=" + search + "&zoom=12&size=700x400");
   $(".main-div").append(map);
+  // the reason your map doesn't go away is because it never gets removed, so any time you call searchload, it loads another map
   resultsDiv = document.createElement('div');
   resultsDiv.setAttribute('class', 'results-div')
   $('.main-div').after(resultsDiv);
@@ -94,6 +99,7 @@ var activityDetail = function(activity){
   console.log(activity);
 };
 
+// was wondering why you prefaced this addEventlistener with a conditional
 if (activitySearch) activitySearch.addEventListener('submit', function(event){
 
   event.preventDefault();
