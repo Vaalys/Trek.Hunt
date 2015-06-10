@@ -27,13 +27,11 @@ var favorite = document.querySelector(".favorite")
 $(".favorite").hide()
 
 var searchLoad = function(search, response){
-  $(".results-div").empty();
   searchDiv.style.float = 'left';
   searchDiv.style.margin = '0 0 0 40px';
 
-  map = document.createElement('img');
-  map.setAttribute('src', "https://maps.googleapis.com/maps/api/staticmap?center=" + search + "&zoom=12&size=700x400");
-  $(".main-div").append(map);
+  mapLoad(search);
+  
   resultsDiv = document.createElement('div');
   resultsDiv.setAttribute('class', 'results-div')
   $('.main-div').after(resultsDiv);
@@ -89,13 +87,21 @@ var searchLoad = function(search, response){
   }
 };
 
+var mapLoad = function(search){
+  map = document.createElement('img');
+  map.setAttribute('src', "https://maps.googleapis.com/maps/api/staticmap?center=" + search + "&zoom=12&size=700x400");
+  map.setAttribute('class', 'search_map')
+  $(".main-div").append(map);
+}
+
 var activityDetail = function(activity){
   console.log(activity);
 };
 
 if (activitySearch) activitySearch.addEventListener('submit', function(event){
-
   event.preventDefault();
+  $(".results-div").empty();
+  $(".search_map").remove();
   var search = citySearch.value;
   var activity = activitySelect.value;
     $.ajax({

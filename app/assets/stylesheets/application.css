@@ -100,7 +100,10 @@ form {
 #search {
   height: 20px;
   text-align: center;
-
+}
+option, select, select > option{
+  text-align: center;
+  /*text-indent: 15px;*/
 }
 
 .favorite {
