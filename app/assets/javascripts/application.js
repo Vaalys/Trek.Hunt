@@ -28,9 +28,6 @@ var favorite = document.querySelector(".favorite")
 $(".favorite").hide()
 
 var searchLoad = function(search, response){
-  searchDiv.style.float = 'left';
-  searchDiv.style.margin = '0 0 0 40px';
-
   mapLoad(search);
 
   resultsDiv = document.createElement('div');
@@ -67,7 +64,6 @@ var searchLoad = function(search, response){
       thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
     }
     else thumbnail.setAttribute('src', "http://www.fredericpierre.fr/wp-content/uploads/2012/06/Nature-1.jpg")
-
 
       actDescription = document.createElement('p');
       $('#' + [i]).append(actDescription)

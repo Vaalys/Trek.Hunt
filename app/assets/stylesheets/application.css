@@ -14,7 +14,6 @@
  *= require_self
  */
 
-
 *{
   text-decoration: none;
 }
@@ -40,19 +39,16 @@ nav {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 50% 35%;
-  height: 140px;
-  /*height: 19%;*/
+  /*height: 140px;*/
+  height: 20%;
 }
 
 nav, ul {
   padding: 0px;
   margin: 0 auto;
-  /*height: 140px;*/
-
 }
 
 a{
-  /*font-family: 'Open Sans',Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;*/
   font-size: 18px;
   font-weight: 200;
   color: white;
@@ -71,17 +67,16 @@ a{
 }
 
 ul > a {
-  color: white;
   float: right;
   margin: 10px 20px 0 0;
 }
 
 .search-box {
   width: 400px;
-  margin: 5px;
   color: #333036;
-  display: inline-block;
-  clear: both;
+  /*clear: both;*/
+  /*float: none !important;*/
+  margin: 0 auto;
 }
 
 .search-box > h1 {
@@ -124,30 +119,24 @@ ul > a {
 }
 
 .main-div > img {
-  /*margin: 20px 0 5px 0;*/
-  /*width: 700px;*/
-  /*height: 400px;*/
-  margin: 20px;
-  display: block;
+  /*margin: 20px;*/
+  margin: 0 auto;
 }
 
 .main-div {
   background: #E9E5DD;
   /*height: 400px;*/
-  height: 60%;
+  /*height: 60%;*/
 }
 
 .results-div {
   background: #95BDF8;
-  /*padding: 20px;*/
-  height: 100%;
   clear: both;
 }
 
 .results-div > p > img {
   height: 170px;
   width: 170px;
-  /*width: auto;*/
   float: left;
   clear: both;
   margin: 0 10px 0 0;
@@ -168,7 +157,6 @@ ul > a {
 
 p > p {
   font-size: 15px;
-  /*margin: 8px 40px 5px 5px;*/
   max-height: 90px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -176,20 +164,18 @@ p > p {
 }
 
 footer {
-  /*height: 80px;*/
-  height: 15%;
+  height: 80px;
+  /*height: 20%;*/
   background-image: url("http://www.zicasso.com/sites/default/files/styles/original_scaled_down/public/headerimages/tour/Costa-Rica-Monteverde-Cloudforest-Bridge-and-Hiker-LT-Header.jpg");
   background-position: bottom;
   background-size: 100%;
   padding: 1rem;
   text-align: left;
   font-size: 18px;
-  /*bottom: 2%;*/
 }
 
 footer > p {
   margin: 1px;
-  /*float: left;*/
   text-align: left;
   display: inline-block;
   clear: both;
