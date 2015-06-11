@@ -13,7 +13,6 @@
     <title>TrekHunt</title>
   </head>
   <body>
-    <header>
       <nav>
         <ul>
           <div class='logo'><a href='/'>Trek.Hunt</a></div>
@@ -23,13 +22,14 @@
           <% else %>
             <%= link_to "Sign In", new_user_session_path, :method => :new %>
           <% end %>
+
           <% if current_user %>
             <%= link_to "My Treks", '/users/current_user', :method => :get %>
           <% else %>
           <% end %>
+
         </ul>
       </nav>
-    </header>
 
   <%= yield %>
 

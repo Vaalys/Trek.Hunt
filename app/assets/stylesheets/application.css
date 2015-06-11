@@ -14,34 +14,55 @@
  *= require_self
  */
 
+
+*{
+  text-decoration: none;
+}
+html{
+  height: 100%;
+}
+
 body {
+  height: 100%;
+  position: relative;
   text-align: center;
   background: #E9E5DD;
   padding: 0;
   margin: 0 auto;
   font-family: 'Open Sans',Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-weight: 10px;
+  font-weight: 200;
   font-size: 20px;
   color: white;
 }
 
-header {
+nav {
   background-image: url("http://www.zicasso.com/sites/default/files/styles/original_scaled_down/public/headerimages/tour/Costa-Rica-Monteverde-Cloudforest-Bridge-and-Hiker-LT-Header.jpg");
-  font-family: 'Rancho', cursive;
   background-repeat: no-repeat;
-  /*background-position: center top bottom;*/
   background-size: 100%;
-  /*background-position: 50px 50px;*/
   background-position: 50% 35%;
-
+  height: 140px;
+  /*height: 19%;*/
 }
 
-header, nav, ul {
+nav, ul {
   padding: 0px;
   margin: 0 auto;
-  height: 140px;
+  /*height: 140px;*/
+
 }
 
+a{
+  /*font-family: 'Open Sans',Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;*/
+  font-size: 18px;
+  font-weight: 200;
+  color: white;
+
+}
+
+.logo a{
+  font-family: 'Rancho', cursive;
+
+}
 .logo, ul > div > a {
   color: white;
   font-size: 110px;
@@ -51,7 +72,6 @@ header, nav, ul {
 
 ul > a {
   color: white;
-  font-size: 25px;
   float: right;
   margin: 10px 20px 0 0;
 }
@@ -60,7 +80,6 @@ ul > a {
   width: 400px;
   margin: 5px;
   color: #333036;
-  font-weight: 200;
   display: inline-block;
   clear: both;
 }
@@ -68,20 +87,7 @@ ul > a {
 .search-box > h1 {
   font-family: 'Rancho', cursive;
   font-size: 55px;
-  /*margin: 2px 0 2px 0 ;*/
   margin: 0;
-}
-
-form {
-  margin: 0 auto;
-}
-
-#search, #city-search  {
-}
-
-#search > input, #activity-select {
-  background-color: black;
-  color: white;
 }
 
 #user_email, #user_password, #search, #activity-select, #city-search, #search > input {
@@ -91,6 +97,10 @@ form {
   font-size: 18px;
   font-weight: 200;
   text-align: center;
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+
 }
 
 #search > input:nth-child(2){
@@ -100,10 +110,6 @@ form {
 #search {
   height: 20px;
   text-align: center;
-}
-option, select, select > option{
-  text-align: center;
-  /*text-indent: 15px;*/
 }
 
 .favorite {
@@ -118,21 +124,22 @@ option, select, select > option{
 }
 
 .main-div > img {
-  margin: 20px 0 5px 0;
-  width: 700px;
-  height: 400px;
-  display: inline-block;
-  text-align: center;
+  /*margin: 20px 0 5px 0;*/
+  /*width: 700px;*/
+  /*height: 400px;*/
+  margin: 20px;
+  display: block;
 }
 
 .main-div {
   background: #E9E5DD;
-  height: 400px;
+  /*height: 400px;*/
+  height: 60%;
 }
 
 .results-div {
   background: #95BDF8;
-  padding: 20px;
+  /*padding: 20px;*/
   height: 100%;
   clear: both;
 }
@@ -140,6 +147,7 @@ option, select, select > option{
 .results-div > p > img {
   height: 170px;
   width: 170px;
+  /*width: auto;*/
   float: left;
   clear: both;
   margin: 0 10px 0 0;
@@ -151,7 +159,8 @@ option, select, select > option{
 }
 
 .results-div > p {
-  margin: 30px 70px 30px 120px;
+  width: 80%;
+  display: inline-block;
   text-align: left;
   height: 160px;
   font-size: 20px;
@@ -159,34 +168,34 @@ option, select, select > option{
 
 p > p {
   font-size: 15px;
-  margin: 8px 40px 5px 5px;
+  /*margin: 8px 40px 5px 5px;*/
   max-height: 90px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
-
 }
 
 footer {
-  height: 80px;
+  /*height: 80px;*/
+  height: 15%;
   background-image: url("http://www.zicasso.com/sites/default/files/styles/original_scaled_down/public/headerimages/tour/Costa-Rica-Monteverde-Cloudforest-Bridge-and-Hiker-LT-Header.jpg");
-  font-family: 'Rancho', cursive;
   background-position: bottom;
   background-size: 100%;
   padding: 1rem;
   text-align: left;
+  font-size: 18px;
+  /*bottom: 2%;*/
 }
 
 footer > p {
-  float: left;
-  display: block;
   margin: 1px;
-  padding: 0;
+  /*float: left;*/
+  text-align: left;
+  display: inline-block;
+  clear: both;
 }
 
 footer > a {
-  font-size: 25px;
-  color: white;
   float: right;
   clear: both;
 }

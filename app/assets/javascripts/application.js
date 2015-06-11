@@ -24,6 +24,7 @@ var searchDiv = document.querySelector(".search-box")
 var mainDiv = document.querySelector(".main-div")
 var favorite = document.querySelector(".favorite")
 
+// favorite button that is currently not doing anything
 $(".favorite").hide()
 
 var searchLoad = function(search, response){
@@ -31,10 +32,12 @@ var searchLoad = function(search, response){
   searchDiv.style.margin = '0 0 0 40px';
 
   mapLoad(search);
-  
+
   resultsDiv = document.createElement('div');
   resultsDiv.setAttribute('class', 'results-div')
   $('.main-div').after(resultsDiv);
+
+  // favorite button that is currently doing nothing
   $(".favorite").show()
 
   for(var i = 0; i < response.length; i++){
