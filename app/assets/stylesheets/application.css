@@ -31,7 +31,7 @@ body {
   font-family: 'Open Sans',Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight: 200;
   font-size: 20px;
-  color: white;
+  /*color: white;*/
 }
 
 nav {
@@ -74,9 +74,8 @@ ul > a {
 .search-box {
   width: 400px;
   color: #333036;
-  /*clear: both;*/
-  /*float: none !important;*/
   margin: 0 auto;
+  display: inline-block;
 }
 
 .search-box > h1 {
@@ -120,13 +119,14 @@ ul > a {
 
 .main-div > img {
   /*margin: 20px;*/
-  margin: 0 auto;
+  /*margin: 30px auto;*/
+  clear: both;
 }
 
 .main-div {
   background: #E9E5DD;
   /*height: 400px;*/
-  /*height: 60%;*/
+  min-height: 60%;
 }
 
 .results-div {
@@ -164,8 +164,8 @@ p > p {
 }
 
 footer {
-  height: 80px;
-  /*height: 20%;*/
+  /*height: 80px;*/
+  height: 20%;
   background-image: url("http://www.zicasso.com/sites/default/files/styles/original_scaled_down/public/headerimages/tour/Costa-Rica-Monteverde-Cloudforest-Bridge-and-Hiker-LT-Header.jpg");
   background-position: bottom;
   background-size: 100%;

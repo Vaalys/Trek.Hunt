@@ -24,7 +24,8 @@ var searchDiv = document.querySelector(".search-box")
 var mainDiv = document.querySelector(".main-div")
 var favorite = document.querySelector(".favorite")
 
-// favorite button that is currently not doing anything
+
+// favorite button that is currently doing nothing
 $(".favorite").hide()
 
 var searchLoad = function(search, response){
@@ -34,10 +35,14 @@ var searchLoad = function(search, response){
   resultsDiv.setAttribute('class', 'results-div')
   $('.main-div').after(resultsDiv);
 
-  // favorite button that is currently doing nothing
-  $(".favorite").show()
+  makeEachResult(response);
 
+};
+
+var makeEachResult = function(response){
   for(var i = 0; i < response.length; i++){
+    var activity = response[i].activities[0]
+    var location = response[i]
     result = document.createElement('p');
     result.setAttribute('id', [i])
     $('.results-div').append(result)
@@ -52,24 +57,28 @@ var searchLoad = function(search, response){
         linkName = document.createElement('a')
         linkName.innerText = (response[i].name)
         $('#' + [i]).prepend(linkName)
-    if (response[i].activities[0]){
-      if (response[i].activities[0].url){
-        linkName.setAttribute('href', response[i].activities[0].url);
+    if (activity){
+      if (activity.url){
+        linkName.setAttribute('href', activity.url);
       }
     }
 
       thumbnail = document.createElement('img');
       $('#' + [i]).prepend(thumbnail)
-    if (response[i].activities[0]) {
-      thumbnail.setAttribute('src', response[i].activities[0].thumbnail)
+    if (activity) {
+      // not doing what I want it to
+      if (activity.thumbnail == null) {
+        thumbnail.setAttribute('src', "http://www.fredericpierre.fr/wp-content/uploads/2012/06/Nature-1.jpg")
+      }
+      else thumbnail.setAttribute('src', activity.thumbnail)
     }
     else thumbnail.setAttribute('src', "http://www.fredericpierre.fr/wp-content/uploads/2012/06/Nature-1.jpg")
 
       actDescription = document.createElement('p');
       $('#' + [i]).append(actDescription)
-    if (response[i].activities[0]) {
-      if (response[i].activities[0].description) {
-      actDescription.innerHTML = response[i].activities[0].description
+    if (activity) {
+      if (activity.description) {
+      actDescription.innerHTML = activity.description
       }
     }
     else actDescription.innerHTML = "Directions: " + response[i].directions
@@ -83,7 +92,7 @@ var searchLoad = function(search, response){
     //       }
     //     }
     // })
-  }
+  };
 };
 
 var mapLoad = function(search){
@@ -91,7 +100,7 @@ var mapLoad = function(search){
   map.setAttribute('src', "https://maps.googleapis.com/maps/api/staticmap?center=" + search + "&zoom=12&size=700x400");
   map.setAttribute('class', 'search_map')
   $(".main-div").append(map);
-}
+};
 
 var activityDetail = function(activity){
   console.log(activity);
@@ -120,7 +129,7 @@ if (activitySearch) activitySearch.addEventListener('submit', function(event){
 })
 
 //      first attempt at using Leaflet, with mapbox
-// var map = L.map('map').setView([39.49111, -105.09374], 13);
+// var map = L.map('map', 'vaalys.f773ae70').setView([39.49111, -105.09374], 13);
 //
 // L.tileLayer('https://a.tiles.mapbox.com/v4/vaalys.f773ae70/page.html?access_token=pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA#4/38.00/-97.00', {
 //     attribution: "Map data &copy; <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/vaalys.f773ae70/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoidmFhbHlzIiwiYSI6IlhpVXh3OVkifQ.fZd5vqAIUcraxAKpsoZybA'></iframe>",
