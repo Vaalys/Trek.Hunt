@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   def show
     @locations = current_user.locations
 
-    respond_to do |format|
-      format.html { render :index }
-      format.json { render :json => @cards }
-    end
+    # respond_to do |format|
+    #   format.html { render :index }
+    #   format.json { render :json => @locations }
+    # end
   end
 
   def location

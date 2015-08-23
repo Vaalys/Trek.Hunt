@@ -24,15 +24,14 @@ var searchDiv = document.querySelector(".search-box")
 var mainDiv = document.querySelector(".main-div")
 var favorite = document.querySelector(".favorite")
 
-
 // favorite button that is currently doing nothing
-$(".favorite").hide()
+$(".favorite").hide();
 
 var searchLoad = function(search, response){
   mapLoad(search);
 
   resultsDiv = document.createElement('div');
-  resultsDiv.setAttribute('class', 'results-div')
+  resultsDiv.setAttribute('class', 'results-div');
   $('.main-div').after(resultsDiv);
 
   makeEachResult(response);
@@ -83,7 +82,7 @@ var makeEachResult = function(response){
     }
     else actDescription.innerHTML = "Directions: " + response[i].directions
 
-    //        clicking on the object to give you the ajax info, figure out how to save this YO
+    //        clicking on the object to give you the ajax info, figure out how to save this
     // if (result) linkName.addEventListener('click', function(event){
     //   event.preventDefault();
     //     for (var i = 0; i < response.length; i ++){
